@@ -1,8 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 
-// const uri =
-//   'mongodb+srv://getdocteam:sit725@mycluster.uawhx6v.mongodb.net/getdoc?retryWrites=true&w=majority';
+
 const uri='mongodb://database:27017';
 
 let getDB = new Promise((resolve, reject) => {
