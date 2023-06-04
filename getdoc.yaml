@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: getdoc
+spec:
+  selector:
+    app: getdoc
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getdoc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: getdoc
+  template:
+    metadata:
+      labels:
+        app: getdoc
+    spec:
+      containers:
+        - name: getdoc
+          image: gcr.io/sit737-project-388412/sit737
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always

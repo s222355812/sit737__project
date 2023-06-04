@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: database
+  template:
+    metadata:
+      labels:
+        pod: database
+    spec:
+      containers:
+        - name: database
+          image: mongo:4.2.8
+          ports:
+            - containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+spec:
+  selector:
+    pod: database
+  ports:
+    - port: 27017
+      targetPort: 27017
+  type: LoadBalancer

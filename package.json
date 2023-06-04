@@ -1,0 +1,32 @@
+{
+  "name": "sit737_project",
+  "version": "1.0.0",
+  "description": "This is a group project for SIT737-T1-2023",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s222355812/sit737_project.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "s222355812",
+  "license": "ISC",
+  "homepage": "https://github.com/s222355812/sit737_project#readme",
+  "dependencies": {
+    "connect-mongodb-session": "^3.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongodb": "^4.9.1",
+    "mongoose": "^6.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
